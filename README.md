@@ -11,6 +11,21 @@ A FastAPI service that accepts webhook events, delivers them in the background, 
 - Sign each outgoing request with HMAC-SHA256 in the `X-Webhook-Signature` header.
 - Manually re-queue events that reach the `dead` state.
 
+## Technologies
+
+| Technology | Use |
+| --- | --- |
+| Python 3.9+ | Application runtime |
+| FastAPI | REST API and request/response handling |
+| Uvicorn | ASGI server |
+| Pydantic | Request and response data validation |
+| SQLAlchemy | ORM and database access |
+| SQLite | Persistent event and delivery-attempt storage |
+| HTTPX | Outgoing webhook requests |
+| `asyncio` (Python standard library) | Background delivery worker lifecycle |
+| HMAC-SHA256 (`hmac` and `hashlib`, Python standard library) | Webhook request signing and signature verification |
+| pytest | Automated tests |
+
 ## Requirements
 
 - Python 3.9 or later
